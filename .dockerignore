@@ -1,0 +1,28 @@
+# --- Source Control ---
+# Don't copy the entire Git history into the container image (saves size)
+.git/
+.gitignore
+
+# --- Dependencies ---
+# Never copy the local 'venv'. We must install fresh deps inside Docker
+# to ensure the build is reproducible (Factor 5).
+venv/
+.venv/
+env/
+
+# --- Python Artifacts ---
+# Don't copy local compiled byte-code
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- Secrets (Factor 3) ---
+# CRITICAL: Don't bake secrets into the image layer!
+.env
+
+# --- Docker Meta-files ---
+# The container doesn't need to know how to build itself
+Dockerfile
+docker-compose.yml
+.dockerignore

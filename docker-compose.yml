@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  web:
+    build: .
+    # FACTOR 7 & 8: Port Binding & Concurrency
+    # We map port 8000 on the host to the app's port 5000.
+    # The range 8000-8005 allows us to run multiple copies.
+    ports:
+      - "8000-8005:${PORT}"
+    
+    # FACTOR 3: Configuration
+    # We inject the config here. No hardcoded passwords in code.
+    environment:
+      - APP_COLOR=${APP_COLOR}
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT}
+      - PORT=${PORT}
+
+    # FACTOR 4: Backing Service Link
+    depends_on:
+      - redis_db
+
+  # FACTOR 4: Backing Services
+  # Redis is treated as an attached resource.
+  redis_db:
+    image: "redis"

@@ -1,0 +1,23 @@
+# --- Python Specific ---
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments (Factor 2: Isolation)
+# We don't commit local environments; we build them in Docker.
+venv/
+.venv/
+env/
+
+# --- Factor 3: Config & Security ---
+# NEVER commit environment variable files containing secrets.
+.env
+.env.local
+
+# --- IDE & OS ---
+# Ignore editor settings and OS metadata
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
