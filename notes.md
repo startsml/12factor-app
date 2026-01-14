@@ -8,7 +8,6 @@ To demonstrate **Factor 5 (Build/Release/Run) violations**, you should perform t
 pip install -r requirements_legacy.txt
 
 ```
-  
 
 ### Step 2: Manual Folder Creation (The Trap)
 Don't run this yet!
