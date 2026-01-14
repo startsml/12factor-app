@@ -33,3 +33,8 @@ In this legacy app, if you run python `legacy_app.py`, it might fail or behave w
 ```Bash
     docker-compose up -d --scale web=3 
 ```
+
+## Can be expanded to
+- Docker volumes to store uploaded files so that if the container crashes the data is safe
+- Can include ci/cd pipline for build/release/run
+- Can also introduce any admin-process
