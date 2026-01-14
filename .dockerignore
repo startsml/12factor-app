@@ -17,6 +17,11 @@ __pycache__/
 *.pyo
 *.pyd
 
+# Application state
+data
+logs
+uploads
+
 # --- Secrets (Factor 3) ---
 # CRITICAL: Don't bake secrets into the image layer!
 .env

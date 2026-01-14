@@ -15,6 +15,11 @@ env/
 .env
 .env.local
 
+# Application state
+data
+logs
+uploads
+
 # --- IDE & OS ---
 # Ignore editor settings and OS metadata
 .vscode/
